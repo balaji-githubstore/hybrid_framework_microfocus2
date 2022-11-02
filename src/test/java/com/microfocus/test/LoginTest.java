@@ -9,16 +9,16 @@ import com.microfocus.utilities.DataUtils;
 
 public class LoginTest extends AutomationWrapper {
 
-	@Test
-	public void validLoginTest() {
+	@Test(dataProvider = "commonDataProvider",dataProviderClass = DataUtils.class)
+	public void validLoginTest(String username,String password,String expectedUrl) {
 
-		driver.findElement(By.name("username")).sendKeys("Admin");
-		driver.findElement(By.name("password")).sendKeys("admin123");
+		driver.findElement(By.name("username")).sendKeys(username);
+		driver.findElement(By.name("password")).sendKeys(password);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 
 		// wait for page load
 		String actualUrl = driver.getCurrentUrl();
-		Assert.assertEquals(actualUrl, "https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList");
+		Assert.assertEquals(actualUrl, expectedUrl);
 	}
 
 	@Test(dataProvider = "commonDataProvider",dataProviderClass = DataUtils.class)

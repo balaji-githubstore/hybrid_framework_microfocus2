@@ -7,13 +7,17 @@ import org.testng.annotations.DataProvider;
 //data provider
 public class DataUtils {
 	
+	/*
+	 * 1. commonDataProvider can be used by all @Test method
+	 * 2. Make sure the @Test method name is the sheetname
+	 */
 	@DataProvider
 	public Object[][] commonDataProvider(Method method) throws IOException
 	{
 		//current @Test method name is the sheetname
 		String testMethodName=method.getName();	
-		Object[][] main= ExcelUtils.getSheetIntoTwoDimArray("test-data/orange_data.xlsx", testMethodName);
-		return main;
+		Object[][] data= ExcelUtils.getSheetIntoTwoDimArray("test-data/orange_data.xlsx", testMethodName);
+		return data;
 	}
 	
 	
