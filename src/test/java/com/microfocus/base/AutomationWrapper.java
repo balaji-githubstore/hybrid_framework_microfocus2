@@ -1,8 +1,15 @@
 package com.microfocus.base;
 
+import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -67,20 +74,39 @@ public class AutomationWrapper {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		driver.get("https://opensource-demo.orangehrmlive.com/");
 	}
+	
+	public void embedScreenshotToExtent()
+	{
+		TakesScreenshot ts=(TakesScreenshot) driver;
+		String base64= ts.getScreenshotAs(OutputType.BASE64);
+		test.addScreenCaptureFromBase64String(base64);
+	}
+	
+	public void saveScreenshot() throws IOException
+	{
+		String fileName="sc_"+LocalDateTime.now().toString().replace(":", "-")+".png";
+		
+		TakesScreenshot ts=(TakesScreenshot) driver;
+		File file= ts.getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(file, new File("target/screenshot/"+fileName));
+	}
 
 	@AfterMethod
-    public void teardown(ITestResult result) {
+	public void teardown(ITestResult result) throws IOException {
 
-        if (result.getStatus() == ITestResult.FAILURE) {
-            test.log(Status.FAIL, MarkupHelper.createLabel(result.getName() + " FAILED ", ExtentColor.RED));
-            test.fail(result.getThrowable());
-        } else if (result.getStatus() == ITestResult.SUCCESS) {
-            test.log(Status.PASS, MarkupHelper.createLabel(result.getName() + " PASSED ", ExtentColor.GREEN));
-        } else {
-            test.log(Status.SKIP, MarkupHelper.createLabel(result.getName() + " SKIPPED ", ExtentColor.ORANGE));
-            test.skip(result.getThrowable());
-        }
+		if (result.getStatus() == ITestResult.FAILURE) {
+			test.log(Status.FAIL, MarkupHelper.createLabel(result.getName() + " FAILED ", ExtentColor.RED));
+			test.fail(result.getThrowable());
+			embedScreenshotToExtent();
+		} else if (result.getStatus() == ITestResult.SUCCESS) {
+			test.log(Status.PASS, MarkupHelper.createLabel(result.getName() + " PASSED ", ExtentColor.GREEN));
+		} else {
+			test.log(Status.SKIP, MarkupHelper.createLabel(result.getName() + " SKIPPED ", ExtentColor.ORANGE));
+			test.skip(result.getThrowable());
+		}
+		
+//		saveScreenshot();
 
-        driver.quit();
-    }
+		driver.quit();
+	}
 }
