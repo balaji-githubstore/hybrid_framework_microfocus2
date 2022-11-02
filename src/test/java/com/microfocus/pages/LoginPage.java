@@ -5,6 +5,11 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginPage {
 
+	private By usernameLocator = By.name("username");
+	private By passwordLocator = By.name("password");
+	private By loginLocator = By.xpath("//button[@type='submit']");
+	private By errorLocator = By.xpath("//p[contains(@class,'alert-content-text')]");
+
 	private WebDriver driver;
 
 	public LoginPage(WebDriver driver) {
@@ -12,18 +17,26 @@ public class LoginPage {
 	}
 
 	public void enterUsername(String username) {
-		driver.findElement(By.name("username")).sendKeys(username);
+		driver.findElement(usernameLocator).sendKeys(username);
 	}
 
 	public void enterPassword(String password) {
-		driver.findElement(By.name("password")).sendKeys(password);
+		driver.findElement(passwordLocator).sendKeys(password);
 	}
 
 	public void clickOnLogin() {
-		driver.findElement(By.xpath("//button[@type='submit']")).click();
+		driver.findElement(loginLocator).click();
 	}
 
 	public String getInvalidErrorMessage() {
-		return driver.findElement(By.xpath("//p[contains(@class,'alert-content-text')]")).getText();
+		return driver.findElement(errorLocator).getText();
+	}
+
+	public String getUsernamePlaceholder() {
+		return driver.findElement(usernameLocator).getAttribute("placeholder");
+	}
+
+	public String getPasswordPlaceholder() {
+		return driver.findElement(passwordLocator).getAttribute("placeholder");
 	}
 }
