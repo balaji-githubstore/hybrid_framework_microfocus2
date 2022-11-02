@@ -21,7 +21,7 @@ public class LoginTest extends AutomationWrapper {
 		Assert.assertEquals(actualUrl, "https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList");
 	}
 
-	@Test(dataProvider = "invalidLoginData",dataProviderClass = DataUtils.class)
+	@Test(dataProvider = "commonDataProvider",dataProviderClass = DataUtils.class)
 	public void invalidLoginTest(String username, String password, String expectedError) {
 		driver.findElement(By.name("username")).sendKeys(username);
 		driver.findElement(By.name("password")).sendKeys(password);

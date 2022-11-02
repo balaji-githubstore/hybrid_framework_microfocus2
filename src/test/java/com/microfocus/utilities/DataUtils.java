@@ -1,8 +1,21 @@
 package com.microfocus.utilities;
 
+import java.io.IOException;
+import java.lang.reflect.Method;
+
 import org.testng.annotations.DataProvider;
 //data provider
 public class DataUtils {
+	
+	@DataProvider
+	public Object[][] commonDataProvider(Method method) throws IOException
+	{
+		//current @Test method name is the sheetname
+		String testMethodName=method.getName();	
+		Object[][] main= ExcelUtils.getSheetIntoTwoDimArray("test-data/orange_data.xlsx", testMethodName);
+		return main;
+	}
+	
 	
 	@DataProvider
 	public Object[][] invalidLoginData()
