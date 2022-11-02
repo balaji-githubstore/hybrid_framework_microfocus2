@@ -39,7 +39,6 @@ public class AutomationWrapper {
 			ExtentSparkReporter spark = new ExtentSparkReporter("target/Spark.html");
 			extent.attachReporter(spark);
 		}
-
 	}
 
 	@AfterSuite
