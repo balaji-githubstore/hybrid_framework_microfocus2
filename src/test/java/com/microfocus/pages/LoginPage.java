@@ -5,19 +5,25 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginPage {
 
-	public static void enterUsername(WebDriver driver, String username) {
+	private WebDriver driver;
+
+	public LoginPage(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	public void enterUsername(String username) {
 		driver.findElement(By.name("username")).sendKeys(username);
 	}
 
-	public static void enterPassword(WebDriver driver, String password) {
+	public void enterPassword(String password) {
 		driver.findElement(By.name("password")).sendKeys(password);
 	}
 
-	public static void clickOnLogin(WebDriver driver) {
+	public void clickOnLogin() {
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 	}
 
-	public static String getInvalidErrorMessage(WebDriver driver) {
+	public String getInvalidErrorMessage() {
 		return driver.findElement(By.xpath("//p[contains(@class,'alert-content-text')]")).getText();
 	}
 }

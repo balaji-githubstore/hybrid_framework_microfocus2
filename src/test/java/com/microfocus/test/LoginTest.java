@@ -12,10 +12,11 @@ public class LoginTest extends AutomationWrapper {
 	@Test(dataProvider = "commonDataProvider", dataProviderClass = DataUtils.class)
 	public void validLoginTest(String username, String password, String expectedUrl) {
 
-		LoginPage.enterUsername(driver, username);
-		LoginPage.enterPassword(driver, password);
-		LoginPage.clickOnLogin(driver);
-
+		LoginPage login=new LoginPage(driver);
+		login.enterUsername(username);
+		login.enterPassword(password);
+		login.clickOnLogin();
+	
 		// wait for page load
 		String actualUrl = driver.getCurrentUrl();
 		Assert.assertEquals(actualUrl, expectedUrl);
@@ -23,11 +24,13 @@ public class LoginTest extends AutomationWrapper {
 
 	@Test(dataProvider = "commonDataProvider", dataProviderClass = DataUtils.class)
 	public void invalidLoginTest(String username, String password, String expectedError) {
-		LoginPage.enterUsername(driver, username);
-		LoginPage.enterPassword(driver, password);
-		LoginPage.clickOnLogin(driver);
-
-		String actualError = LoginPage.getInvalidErrorMessage(driver);
+		
+		LoginPage login=new LoginPage(driver);
+		login.enterUsername(username);
+		login.enterPassword(password);
+		login.clickOnLogin();
+		
+		String actualError = login.getInvalidErrorMessage();
 		Assert.assertEquals(actualError, expectedError);
 	}
 
