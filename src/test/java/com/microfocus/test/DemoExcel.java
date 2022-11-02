@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -18,19 +19,25 @@ public class DemoExcel {
 		
 		XSSFSheet sheet= book.getSheet("invalidLoginTest");
 		
-		Object[][] data=new Object[2][3];
+		int rowCount=sheet.getPhysicalNumberOfRows();
+		int cellCount=sheet.getRow(0).getPhysicalNumberOfCells();
 		
-		for(int r=1;r<3;r++)
+		Object[][] data=new Object[rowCount-1][cellCount];
+		
+		DataFormatter format=new DataFormatter();
+		
+		for(int r=1;r<rowCount;r++)
 		{
-			for(int c=0;c<3;c++)
+			for(int c=0;c<cellCount;c++)
 			{
-				String value= sheet.getRow(r).getCell(c).getStringCellValue();
-				System.out.println(value);
+				String value=format.formatCellValue(sheet.getRow(r).getCell(c));
 				data[r-1][c]=value;
 			}
 		}
+		
+		System.out.println(data[0][0]);
+		
 
-		System.out.println();
 	}
 
 }
