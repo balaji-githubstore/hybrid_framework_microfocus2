@@ -52,6 +52,8 @@ public class ExcelUtils {
 
 					if (a == (int) a) {
 						data[r - 1][c] = Integer.parseInt(String.valueOf(a));
+					} else {
+						data[r - 1][c] = a;
 					}
 				} else if (sheet.getRow(r).getCell(c).getCellType() == CellType.STRING) {
 					data[r - 1][c] = sheet.getRow(r).getCell(c).getStringCellValue();
