@@ -5,8 +5,10 @@
     <classes>
       <class name="com.microfocus.test.LoginTest">
         <methods>
+          <include name="invalidLoginTest" invocation-numbers="1"/>
           <include name="setup"/>
-          <include name="validLoginTest"/>
+          <include name="end"/>
+          <include name="init"/>
           <include name="teardown"/>
         </methods>
       </class> <!-- com.microfocus.test.LoginTest -->
