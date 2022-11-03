@@ -10,7 +10,7 @@ import com.microfocus.utilities.DataUtils;
 
 public class LoginTest extends AutomationWrapper {
 
-	@Test(dataProvider = "commonDataProvider", dataProviderClass = DataUtils.class,groups = {"smoke","login"})
+	@Test(dataProvider = "commonDataProviderForJson", dataProviderClass = DataUtils.class,groups = {"smoke","login"})
 	public void validLoginTest(String username, String password, String expectedUrl) {
 
 		LoginPage login = new LoginPage(driver);
@@ -26,7 +26,7 @@ public class LoginTest extends AutomationWrapper {
 		Assert.assertEquals(actualUrl, expectedUrl);
 	}
 
-	@Test(dataProvider = "commonDataProvider", dataProviderClass = DataUtils.class,groups = {"login"})
+	@Test(dataProvider = "commonDataProviderForJson", dataProviderClass = DataUtils.class,groups = {"login"})
 	public void invalidLoginTest(String username, String password, String expectedError) {
 
 		LoginPage login = new LoginPage(driver);

@@ -1,0 +1,21 @@
+{
+   "invalidLoginTest":[
+      [
+         "bala",
+         "bala123",
+         "Invalid credentials"
+      ],
+      [
+         "rr",
+         "tt",
+         "Invalid credentials"
+      ]
+   ],
+   "validLoginTest":[
+      [
+         "Admin",
+         "admin123",
+         "https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList"
+      ]
+   ]
+}

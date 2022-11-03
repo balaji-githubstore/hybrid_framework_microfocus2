@@ -20,6 +20,16 @@ public class DataUtils {
 		return data;
 	}
 	
+	@DataProvider
+	public Object[][] commonDataProviderForJson(Method method) throws IOException
+	{
+		//current @Test method name is the sheetname
+		String testMethodName=method.getName();	
+		Object[][] data= JsonUtils.getJsonIntoTwoDimArray("test-data/orange_data.json", testMethodName);
+		return data;
+	}
+	
+	
 	
 	@DataProvider
 	public Object[][] invalidLoginData()
