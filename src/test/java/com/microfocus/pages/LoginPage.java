@@ -3,40 +3,43 @@ package com.microfocus.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage {
+import com.microfocus.base.WebDriverKeywords;
+
+public class LoginPage extends WebDriverKeywords {
 
 	private By usernameLocator = By.name("username");
 	private By passwordLocator = By.name("password");
 	private By loginLocator = By.xpath("//button[@type='submit']");
 	private By errorLocator = By.xpath("//p[contains(@class,'alert-content-text')]");
 
-	private WebDriver driver;
+//	private WebDriver driver;
 
 	public LoginPage(WebDriver driver) {
-		this.driver = driver;
+		super(driver);
+//		this.driver = driver;
 	}
 
 	public void enterUsername(String username) {
-		driver.findElement(usernameLocator).sendKeys(username);
+		typeUsingLocator(usernameLocator, username);
 	}
 
 	public void enterPassword(String password) {
-		driver.findElement(passwordLocator).sendKeys(password);
+		typeUsingLocator(passwordLocator, password);
 	}
 
 	public void clickOnLogin() {
-		driver.findElement(loginLocator).click();
+		clickUsingLocator(loginLocator);
 	}
 
 	public String getInvalidErrorMessage() {
-		return driver.findElement(errorLocator).getText();
+		return getTextUsingLocator(errorLocator);
 	}
 
 	public String getUsernamePlaceholder() {
-		return driver.findElement(usernameLocator).getAttribute("placeholder");
+		return getAttributeUsingLocator(usernameLocator, "placeholder");
 	}
 
 	public String getPasswordPlaceholder() {
-		return driver.findElement(passwordLocator).getAttribute("placeholder");
+		return getAttributeUsingLocator(passwordLocator, "placeholder");
 	}
 }

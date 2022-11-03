@@ -17,6 +17,7 @@ public class LoginTest extends AutomationWrapper {
 		login.enterUsername(username);
 		login.enterPassword(password);
 		login.clickOnLogin();
+		
 
 		MainPage main = new MainPage(driver);
 		main.waitForPresenceOfAdmin();

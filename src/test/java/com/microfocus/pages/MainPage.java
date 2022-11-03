@@ -7,20 +7,23 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class MainPage {
+import com.microfocus.base.WebDriverKeywords;
+
+public class MainPage extends WebDriverKeywords {
 	private By adminLocator=By.xpath("//span[text()='Admin']");
 	private By pimLocator=By.xpath("//span[text()='PIM']");
 	
-	private WebDriver driver;
+	//private WebDriver driver;
 
 	public MainPage(WebDriver driver)
 	{
-		this.driver=driver;
+		super(driver);
+		//this.driver=driver;
 	}
 	
 	public void clickOnAdmin()
 	{
-		driver.findElement(adminLocator).click();
+		clickUsingLocator(adminLocator);
 	}
 	
 	public void clickOnPIM()
@@ -30,8 +33,7 @@ public class MainPage {
 	
 	public void waitForPresenceOfAdmin()
 	{
-		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(60));
-		wait.until(ExpectedConditions.presenceOfElementLocated(adminLocator));
+		waitForPresenceOfLocator(adminLocator);
 	}
 
 	public String getMainPageUrl()
