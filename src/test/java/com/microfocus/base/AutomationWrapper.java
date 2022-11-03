@@ -3,6 +3,7 @@ package com.microfocus.base;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.net.URL;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -14,6 +15,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -55,44 +58,55 @@ public class AutomationWrapper {
 	}
 
 	@BeforeMethod(alwaysRun = true)
-	@Parameters({ "browser" })
-	public void setup(@Optional("ch") String browserName, Method method) throws Exception {
+	@Parameters({ "browser", "node" })
+	public void setup(@Optional("ch") String browserName, @Optional("NA") String node, Method method) throws Exception {
 
 		test = extent.createTest(method.getName());
 
-		if (browserName.equalsIgnoreCase("edge")) {
-			WebDriverManager.edgedriver().setup();
-			driver = new EdgeDriver();
-		} else if (browserName.equalsIgnoreCase("ff")) {
-			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
+		if (node.equalsIgnoreCase("na")) {
+			if (browserName.equalsIgnoreCase("edge")) {
+				WebDriverManager.edgedriver().setup();
+				driver = new EdgeDriver();
+			} else if (browserName.equalsIgnoreCase("ff")) {
+				WebDriverManager.firefoxdriver().setup();
+				driver = new FirefoxDriver();
+			} else {
+				WebDriverManager.chromedriver().setup();
+				driver = new ChromeDriver();
+			}
 		} else {
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			DesiredCapabilities cap = new DesiredCapabilities();
+			if (browserName.equalsIgnoreCase("edge")) {
+				cap.setBrowserName("edge");
+				
+			} else if (browserName.equalsIgnoreCase("ff")) {
+				cap.setBrowserName("firefox");
+			} else {
+				cap.setBrowserName("chrome");
+			}
+			driver = new RemoteWebDriver(new URL(node), cap);
 		}
 
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		
-		String baseUrl=PropUtils.getValue("test-data/data.properties", "url");
-		
+
+		String baseUrl = PropUtils.getValue("test-data/data.properties", "url");
+
 		driver.get(baseUrl);
 	}
-	
-	public void embedScreenshotToExtent()
-	{
-		TakesScreenshot ts=(TakesScreenshot) driver;
-		String base64= ts.getScreenshotAs(OutputType.BASE64);
+
+	public void embedScreenshotToExtent() {
+		TakesScreenshot ts = (TakesScreenshot) driver;
+		String base64 = ts.getScreenshotAs(OutputType.BASE64);
 		test.addScreenCaptureFromBase64String(base64);
 	}
-	
-	public void saveScreenshot() throws IOException
-	{
-		String fileName="sc_"+LocalDateTime.now().toString().replace(":", "-")+".png";
-		
-		TakesScreenshot ts=(TakesScreenshot) driver;
-		File file= ts.getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("target/screenshot/"+fileName));
+
+	public void saveScreenshot() throws IOException {
+		String fileName = "sc_" + LocalDateTime.now().toString().replace(":", "-") + ".png";
+
+		TakesScreenshot ts = (TakesScreenshot) driver;
+		File file = ts.getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(file, new File("target/screenshot/" + fileName));
 	}
 
 	@AfterMethod(alwaysRun = true)
@@ -108,7 +122,7 @@ public class AutomationWrapper {
 			test.log(Status.SKIP, MarkupHelper.createLabel(result.getName() + " SKIPPED ", ExtentColor.ORANGE));
 			test.skip(result.getThrowable());
 		}
-		
+
 //		saveScreenshot();
 
 		driver.quit();

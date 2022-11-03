@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Orange_HRM_Suite" class="navigator-link">
-              <span class="suite-name border-passed">Orange HRM Suite</span>
+              <span class="suite-name border-skipped">Orange HRM Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -51,12 +51,12 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Orange_HRM_Suite" class="navigator-link ">
-                    <span>D:\Mine\Company\MicroFocus2\automation_workspace\OrangeAutomation\testng.xml</span>
+                    <span>D:\Mine\Company\MicroFocus2\automation_workspace\OrangeAutomation\testng2.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
                   <a href="#" panel-name="testlist-Orange_HRM_Suite" class="navigator-link ">
-                    <span class="test-stats">1 test</span>
+                    <span class="test-stats">5 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">5 methods,  1 skipped,  4 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Orange_HRM_Suite" class="hide-methods skipped suite-Orange_HRM_Suite"> (hide)</a> <!-- hide-methods skipped suite-Orange_HRM_Suite -->
+                      <a href="#" panel-name="suite-Orange_HRM_Suite" class="show-methods skipped suite-Orange_HRM_Suite"> (show)</a> <!-- show-methods skipped suite-Orange_HRM_Suite -->
+                    </span>
+                    <div class="method-list-content skipped suite-Orange_HRM_Suite">
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Orange_HRM_Suite" title="com.microfocus.test.LoginUITest" class="method navigator-link" hash-for-method="validateTitleTest">validateTitleTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-Orange_HRM_Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,6 +116,21 @@
                       <a href="#" panel-name="suite-Orange_HRM_Suite" class="show-methods passed suite-Orange_HRM_Suite"> (show)</a> <!-- show-methods passed suite-Orange_HRM_Suite -->
                     </span>
                     <div class="method-list-content passed suite-Orange_HRM_Suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Orange_HRM_Suite" title="com.microfocus.test.LoginUITest" class="method navigator-link" hash-for-method="validateTitleTest">validateTitleTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Orange_HRM_Suite" title="com.microfocus.test.LoginUITest" class="method navigator-link" hash-for-method="validateTitleTest">validateTitleTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Orange_HRM_Suite" title="com.microfocus.test.LoginUITest" class="method navigator-link" hash-for-method="validateTitleTest">validateTitleTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Orange_HRM_Suite" title="com.microfocus.test.LoginUITest" class="method navigator-link" hash-for-method="validateTitleTest">validateTitleTest</a> <!-- method navigator-link -->
@@ -119,6 +148,72 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Orange_HRM_Suite" class="panel Orange_HRM_Suite">
+          <div class="suite-Orange_HRM_Suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">com.microfocus.test.LoginUITest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateTitleTest">
+                  </a> <!-- validateTitleTest -->
+                  <span class="method-name">validateTitleTest</span>
+                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: &apos;BALAJI&apos;, ip: &apos;192.168.1.5&apos;
+Build info: version: &apos;4.5.3&apos;, revision: &apos;4b786a1e430&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: firefox}], desiredCapabilities=Capabilities {browserName: firefox}}]
+Capabilities {}
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:242)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:157)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:139)
+	at com.microfocus.base.AutomationWrapper.setup(AutomationWrapper.java:87)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.RuntimeException: NettyHttpHandler request execution error
+	at org.openqa.selenium.remote.http.netty.NettyHttpHandler.makeCall(NettyHttpHandler.java:76)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
+	at org.openqa.selenium.remote.http.netty.NettyHttpHandler.execute(NettyHttpHandler.java:49)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
+	at org.openqa.selenium.remote.http.netty.NettyClient.execute(NettyClient.java:99)
+	at org.openqa.selenium.remote.tracing.TracedHttpClient.execute(TracedHttpClient.java:55)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:120)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:102)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:67)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
+	... 31 more
+Caused by: java.util.concurrent.ExecutionException: java.util.concurrent.TimeoutException: Request timeout to 192.168.1.5/192.168.1.5:4444 after 180000 ms
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.asynchttpclient.netty.NettyResponseFuture.get(NettyResponseFuture.java:206)
+	at org.openqa.selenium.remote.http.netty.NettyHttpHandler.makeCall(NettyHttpHandler.java:59)
+	... 44 more
+Caused by: java.util.concurrent.TimeoutException: Request timeout to 192.168.1.5/192.168.1.5:4444 after 180000 ms
+	at org.asynchttpclient.netty.timeout.TimeoutTimerTask.expire(TimeoutTimerTask.java:43)
+	at org.asynchttpclient.netty.timeout.RequestTimeoutTimerTask.run(RequestTimeoutTimerTask.java:50)
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.run(HashedWheelTimer.java:715)
+	at io.netty.util.concurrent.ImmediateExecutor.execute(ImmediateExecutor.java:34)
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:703)
+	at io.netty.util.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:790)
+	at io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:503)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	... 1 more
+... Removed 22 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Orange_HRM_Suite-class-skipped -->
           <div class="suite-Orange_HRM_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -132,20 +227,42 @@
                   <span class="method-name">validateTitleTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateTitleTest">
+                  </a> <!-- validateTitleTest -->
+                  <span class="method-name">validateTitleTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateTitleTest">
+                  </a> <!-- validateTitleTest -->
+                  <span class="method-name">validateTitleTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateTitleTest">
+                  </a> <!-- validateTitleTest -->
+                  <span class="method-name">validateTitleTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Orange_HRM_Suite-class-passed -->
         </div> <!-- panel Orange_HRM_Suite -->
         <div panel-name="test-xml-Orange_HRM_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">D:\Mine\Company\MicroFocus2\automation_workspace\OrangeAutomation\testng.xml</span>
+            <span class="header-content">D:\Mine\Company\MicroFocus2\automation_workspace\OrangeAutomation\testng2.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite name=&quot;Orange HRM Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
-  &lt;parameter name=&quot;browser&quot; value=&quot;edge&quot;/&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Login Test&quot;&gt;
+&lt;suite parallel=&quot;tests&quot; name=&quot;Orange HRM Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; parallel=&quot;tests&quot; name=&quot;Login Test Ch&quot;&gt;
+    &lt;parameter name=&quot;node&quot; value=&quot;http://192.168.1.5:4444/&quot;/&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;ch&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.microfocus.test.LoginUITest&quot;&gt;
         &lt;methods&gt;
@@ -153,7 +270,51 @@
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- com.microfocus.test.LoginUITest --&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Login Test --&gt;
+  &lt;/test&gt; &lt;!-- Login Test Ch --&gt;
+  &lt;test thread-count=&quot;5&quot; parallel=&quot;tests&quot; name=&quot;Login Test Edge&quot;&gt;
+    &lt;parameter name=&quot;node&quot; value=&quot;http://192.168.1.5:4444/&quot;/&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;ff&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.microfocus.test.LoginUITest&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;validateTitleTest&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.microfocus.test.LoginUITest --&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Login Test Edge --&gt;
+  &lt;test thread-count=&quot;5&quot; parallel=&quot;tests&quot; name=&quot;Login Test Edge 2&quot;&gt;
+    &lt;parameter name=&quot;node&quot; value=&quot;http://192.168.1.5:4444/&quot;/&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;ff&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.microfocus.test.LoginUITest&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;validateTitleTest&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.microfocus.test.LoginUITest --&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Login Test Edge 2 --&gt;
+  &lt;test thread-count=&quot;5&quot; parallel=&quot;tests&quot; name=&quot;Login Test Edge6&quot;&gt;
+    &lt;parameter name=&quot;node&quot; value=&quot;http://192.168.1.5:4444/&quot;/&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;ff&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.microfocus.test.LoginUITest&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;validateTitleTest&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.microfocus.test.LoginUITest --&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Login Test Edge6 --&gt;
+  &lt;test thread-count=&quot;5&quot; parallel=&quot;tests&quot; name=&quot;Login Test Edge 5&quot;&gt;
+    &lt;parameter name=&quot;node&quot; value=&quot;http://192.168.1.5:4444/&quot;/&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;ff&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.microfocus.test.LoginUITest&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;validateTitleTest&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.microfocus.test.LoginUITest --&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Login Test Edge 5 --&gt;
 &lt;/suite&gt; &lt;!-- Orange HRM Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -165,7 +326,19 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Login Test (1 class)</span>
+                <span class="test-name">Login Test Ch (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">Login Test Edge (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">Login Test Edge 2 (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">Login Test Edge6 (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">Login Test Edge 5 (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -207,16 +380,32 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(5);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'validateTitleTest')
 data.setCell(0, 2, 'com.microfocus.test.LoginUITest')
-data.setCell(0, 3, 105);
+data.setCell(0, 3, 138);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'validateTitleTest')
+data.setCell(1, 2, 'com.microfocus.test.LoginUITest')
+data.setCell(1, 3, 96);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'validateTitleTest')
+data.setCell(2, 2, 'com.microfocus.test.LoginUITest')
+data.setCell(2, 3, 41);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'validateTitleTest')
+data.setCell(3, 2, 'com.microfocus.test.LoginUITest')
+data.setCell(3, 3, 34);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'validateTitleTest')
+data.setCell(4, 2, 'com.microfocus.test.LoginUITest')
+data.setCell(4, 3, 0);
 window.suiteTableData['Orange_HRM_Suite']= { tableData: data, tableDiv: 'times-div-Orange_HRM_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 105 ms</span>
+              <span class="suite-total-time">Total running time: 3 minutes</span>
               <div id="times-div-Orange_HRM_Suite">
               </div> <!-- times-div-Orange_HRM_Suite -->
             </div> <!-- times-div -->
@@ -231,12 +420,20 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Orange_HRM_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">1 ignored method</span>
+            <span class="header-content">5 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
               <span class="ignored-class-name">com.microfocus.test.LoginUITest</span>
               <div class="ignored-methods-div">
+                <span class="ignored-method-name">validatePlaceholderTest</span>
+                <br/>
+                <span class="ignored-method-name">validatePlaceholderTest</span>
+                <br/>
+                <span class="ignored-method-name">validatePlaceholderTest</span>
+                <br/>
+                <span class="ignored-method-name">validatePlaceholderTest</span>
+                <br/>
                 <span class="ignored-method-name">validatePlaceholderTest</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
@@ -255,20 +452,72 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-method before">
-                <span class="method-name">setup(edge, public void com.microfocus.test.LoginUITest.validateTitleTest())</span>
-                <span class="method-start">519 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">setup(ff, http://192.168.1.5:4444/, public void com.microfocus.test.LoginUITest.validateTitleTest())</span>
+                <span class="method-start">741 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">setup(ff, http://192.168.1.5:4444/, public void com.microfocus.test.LoginUITest.validateTitleTest())</span>
+                <span class="method-start">741 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">setup(ff, http://192.168.1.5:4444/, public void com.microfocus.test.LoginUITest.validateTitleTest())</span>
+                <span class="method-start">741 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">setup(ch, http://192.168.1.5:4444/, public void com.microfocus.test.LoginUITest.validateTitleTest())</span>
+                <span class="method-start">743 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">setup(ff, http://192.168.1.5:4444/, public void com.microfocus.test.LoginUITest.validateTitleTest())</span>
+                <span class="method-start">744 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">validateTitleTest</span>
-                <span class="method-start">16107 ms</span>
+                <span class="method-start">31476 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown([TestResult name=validateTitleTest status=SUCCESS method=LoginUITest.validateTitleTest()[pri:1, inst...)</span>
-                <span class="method-start">16219 ms</span>
+                <span class="method-start">31525 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">validateTitleTest</span>
+                <span class="method-start">34471 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown([TestResult name=validateTitleTest status=SUCCESS method=LoginUITest.validateTitleTest()[pri:1, inst...)</span>
+                <span class="method-start">34513 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">validateTitleTest</span>
+                <span class="method-start">49186 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown([TestResult name=validateTitleTest status=SUCCESS method=LoginUITest.validateTitleTest()[pri:1, inst...)</span>
+                <span class="method-start">49326 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">validateTitleTest</span>
+                <span class="method-start">56439 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown([TestResult name=validateTitleTest status=SUCCESS method=LoginUITest.validateTitleTest()[pri:1, inst...)</span>
+                <span class="method-start">56542 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">validateTitleTest</span>
+                <span class="method-start">182483 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">teardown([TestResult name={null} status=CREATED method=LoginUITest.validateTitleTest()[pri:1, instance:com.mi...)</span>
+                <span class="method-start">182488 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
                 <span class="method-name">end</span>
-                <span class="method-start">16911 ms</span>
+                <span class="method-start">182547 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
