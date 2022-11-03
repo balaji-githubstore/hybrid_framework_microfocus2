@@ -5,8 +5,8 @@
     <classes>
       <class name="com.microfocus.test.LoginTest">
         <methods>
-          <include name="validLoginTest" invocation-numbers="0"/>
           <include name="setup"/>
+          <include name="validLoginTest" invocation-numbers="0"/>
           <include name="end"/>
           <include name="init"/>
           <include name="teardown"/>

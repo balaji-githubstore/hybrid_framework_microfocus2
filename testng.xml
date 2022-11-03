@@ -6,8 +6,11 @@
 
 	<test thread-count="5" name="Login Test">
 		<classes>
-			<class name="com.microfocus.test.LoginUITest" />
-			<class name="com.microfocus.test.LoginTest" />
+			<class name="com.microfocus.test.LoginUITest">
+				<methods>
+					<include name="validateTitleTest"></include>
+				</methods>
+			</class>
 		</classes>
 	</test> <!-- Test -->
 
