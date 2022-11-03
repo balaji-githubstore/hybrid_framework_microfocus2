@@ -2,7 +2,7 @@ package com.microfocus.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
+//page objects
 public class LoginPage {
 
 	private By usernameLocator = By.name("username");
