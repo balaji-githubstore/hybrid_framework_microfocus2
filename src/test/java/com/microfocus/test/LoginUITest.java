@@ -8,13 +8,13 @@ import com.microfocus.pages.LoginPage;
 
 public class LoginUITest extends AutomationWrapper {
 	
-	@Test(priority = 1)
+	@Test(priority = 1,groups = {"UI","smoke"})
 	public void validateTitleTest() {
 		String actualTitle = driver.getTitle();
 		Assert.assertEquals(actualTitle, "OrangeHRM");
 	}
 
-	@Test(priority = 2)
+	@Test(priority = 2,groups = {"UI"})
 	public void validatePlaceholderTest() {
 		LoginPage login=new LoginPage(driver);
 		String actualUserNamePlaceholder=login.getUsernamePlaceholder();

@@ -1,10 +1,5 @@
 package com.microfocus.test;
 
-import java.time.Duration;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -15,7 +10,7 @@ import com.microfocus.utilities.DataUtils;
 
 public class LoginTest extends AutomationWrapper {
 
-	@Test(dataProvider = "commonDataProvider", dataProviderClass = DataUtils.class)
+	@Test(dataProvider = "commonDataProvider", dataProviderClass = DataUtils.class,groups = {"smoke","login"})
 	public void validLoginTest(String username, String password, String expectedUrl) {
 
 		LoginPage login = new LoginPage(driver);
@@ -30,7 +25,7 @@ public class LoginTest extends AutomationWrapper {
 		Assert.assertEquals(actualUrl, expectedUrl);
 	}
 
-	@Test(dataProvider = "commonDataProvider", dataProviderClass = DataUtils.class)
+	@Test(dataProvider = "commonDataProvider", dataProviderClass = DataUtils.class,groups = {"login"})
 	public void invalidLoginTest(String username, String password, String expectedError) {
 
 		LoginPage login = new LoginPage(driver);

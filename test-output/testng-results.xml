@@ -1,17 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="4" total="6" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-11-02T21:45:56 IST" name="Default suite" finished-at="2022-11-02T21:46:09 IST" duration-ms="12698">
+  <suite started-at="2022-11-03T09:56:49 IST" name="Orange HRM Suite" finished-at="2022-11-03T09:57:34 IST" duration-ms="45058">
     <groups>
+      <group name="UI">
+        <method signature="LoginUITest.validateTitleTest()[pri:1, instance:com.microfocus.test.LoginUITest@f09733f]" name="validateTitleTest" class="com.microfocus.test.LoginUITest"/>
+      </group> <!-- UI -->
+      <group name="smoke">
+        <method signature="LoginTest.validLoginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.microfocus.test.LoginTest@6c1a5b54]" name="validLoginTest" class="com.microfocus.test.LoginTest"/>
+        <method signature="LoginUITest.validateTitleTest()[pri:1, instance:com.microfocus.test.LoginUITest@f09733f]" name="validateTitleTest" class="com.microfocus.test.LoginUITest"/>
+      </group> <!-- smoke -->
+      <group name="login">
+        <method signature="LoginTest.validLoginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.microfocus.test.LoginTest@6c1a5b54]" name="validLoginTest" class="com.microfocus.test.LoginTest"/>
+      </group> <!-- login -->
     </groups>
-    <test started-at="2022-11-02T21:45:56 IST" name="Default test" finished-at="2022-11-02T21:46:09 IST" duration-ms="12698">
-      <class name="com.microfocus.utilities.JsonUtils">
-        <test-method signature="getJsonIntoTwoDimArray2()[pri:0, instance:com.microfocus.utilities.JsonUtils@66f57048]" started-at="2022-11-02T21:45:56 IST" name="getJsonIntoTwoDimArray2" finished-at="2022-11-02T21:46:09 IST" duration-ms="12615" status="PASS">
+    <test started-at="2022-11-03T09:56:49 IST" name="Orange Test" finished-at="2022-11-03T09:57:34 IST" duration-ms="45058">
+      <class name="com.microfocus.test.LoginUITest">
+        <test-method is-config="true" signature="init()[pri:0, instance:com.microfocus.test.LoginUITest@f09733f]" started-at="2022-11-03T09:56:48 IST" name="init" finished-at="2022-11-03T09:56:49 IST" duration-ms="786" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getJsonIntoTwoDimArray2 -->
-      </class> <!-- com.microfocus.utilities.JsonUtils -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- init -->
+        <test-method is-config="true" signature="setup(java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.microfocus.test.LoginUITest@f09733f]" started-at="2022-11-03T09:56:49 IST" name="setup" finished-at="2022-11-03T09:57:18 IST" duration-ms="29017" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void com.microfocus.test.LoginUITest.validateTitleTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="validateTitleTest()[pri:1, instance:com.microfocus.test.LoginUITest@f09733f]" started-at="2022-11-03T09:57:18 IST" name="validateTitleTest" finished-at="2022-11-03T09:57:18 IST" duration-ms="42" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateTitleTest -->
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.microfocus.test.LoginUITest@f09733f]" started-at="2022-11-03T09:57:18 IST" name="teardown" finished-at="2022-11-03T09:57:19 IST" duration-ms="944" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=validateTitleTest status=SUCCESS method=LoginUITest.validateTitleTest()[pri:1, instance:com.microfocus.test.LoginUITest@f09733f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="end()[pri:0, instance:com.microfocus.test.LoginUITest@f09733f]" started-at="2022-11-03T09:57:34 IST" name="end" finished-at="2022-11-03T09:57:35 IST" duration-ms="1022" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- end -->
+      </class> <!-- com.microfocus.test.LoginUITest -->
+      <class name="com.microfocus.test.LoginTest">
+        <test-method is-config="true" signature="setup(java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.microfocus.test.LoginTest@6c1a5b54]" started-at="2022-11-03T09:57:20 IST" name="setup" finished-at="2022-11-03T09:57:28 IST" duration-ms="8186" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void com.microfocus.test.LoginTest.validLoginTest(java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="validLoginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.microfocus.test.LoginTest@6c1a5b54]" started-at="2022-11-03T09:57:28 IST" name="validLoginTest" data-provider="commonDataProvider" finished-at="2022-11-03T09:57:33 IST" duration-ms="5233" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[admin123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validLoginTest -->
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.microfocus.test.LoginTest@6c1a5b54]" started-at="2022-11-03T09:57:33 IST" name="teardown" finished-at="2022-11-03T09:57:34 IST" duration-ms="695" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=validLoginTest status=SUCCESS method=LoginTest.validLoginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.microfocus.test.LoginTest@6c1a5b54] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.microfocus.test.LoginTest -->
+    </test> <!-- Orange Test -->
+  </suite> <!-- Orange HRM Suite -->
 </testng-results>

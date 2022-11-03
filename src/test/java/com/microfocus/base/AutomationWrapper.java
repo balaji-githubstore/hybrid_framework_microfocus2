@@ -39,7 +39,7 @@ public class AutomationWrapper {
 
 	protected ExtentTest test;
 
-	@BeforeSuite
+	@BeforeSuite(alwaysRun = true)
 	public void init() {
 		if (extent == null) {
 			extent = new ExtentReports();
@@ -48,12 +48,12 @@ public class AutomationWrapper {
 		}
 	}
 
-	@AfterSuite
+	@AfterSuite(alwaysRun = true)
 	public void end() {
 		extent.flush();
 	}
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	@Parameters({ "browser" })
 	public void setup(@Optional("ch") String browserName, Method method) {
 
@@ -91,7 +91,7 @@ public class AutomationWrapper {
 		FileUtils.copyFile(file, new File("target/screenshot/"+fileName));
 	}
 
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void teardown(ITestResult result) throws IOException {
 
 		if (result.getStatus() == ITestResult.FAILURE) {
