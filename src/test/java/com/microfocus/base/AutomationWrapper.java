@@ -28,6 +28,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.microfocus.utilities.PropUtils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -55,7 +56,7 @@ public class AutomationWrapper {
 
 	@BeforeMethod(alwaysRun = true)
 	@Parameters({ "browser" })
-	public void setup(@Optional("ch") String browserName, Method method) {
+	public void setup(@Optional("ch") String browserName, Method method) throws Exception {
 
 		test = extent.createTest(method.getName());
 
@@ -72,7 +73,10 @@ public class AutomationWrapper {
 
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		driver.get("https://opensource-demo.orangehrmlive.com/");
+		
+		String baseUrl=PropUtils.getValue("test-data/data.properties", "url");
+		
+		driver.get(baseUrl);
 	}
 	
 	public void embedScreenshotToExtent()
