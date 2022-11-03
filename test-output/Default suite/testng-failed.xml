@@ -3,11 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.microfocus.utilities.JsonUtils">
+      <class name="com.microfocus.test.LoginTest">
         <methods>
-          <include name="getJsonIntoTwoDimArray2"/>
+          <include name="validLoginTest" invocation-numbers="0"/>
+          <include name="setup"/>
+          <include name="end"/>
+          <include name="init"/>
+          <include name="teardown"/>
         </methods>
-      </class> <!-- com.microfocus.utilities.JsonUtils -->
+      </class> <!-- com.microfocus.test.LoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
